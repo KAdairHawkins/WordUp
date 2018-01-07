@@ -22,12 +22,12 @@ $("h4.wh-word").each(function(i, element, html){
 
   var word = $(element).children().text();
 
-  results.push({
-    word: word
-  });
+  results.push(word)
 
 });
 
   console.log(results);
 
 });
+
+export results;
