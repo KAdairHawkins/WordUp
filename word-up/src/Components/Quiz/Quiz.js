@@ -19,15 +19,20 @@ class Quiz extends Component {
         , chosenDefinition: ""
         , displayAnswers: "hidden"
         , chosenQuestions: []
+        , correctAnswer: {}
     }
     }
     
+    correctAnswerPicker = () => {
+        let foo = Math.floor(Math.random() * this.state.questions.length);
+        //Look. This is bad. I shouldn't do this. But the damn thing won't update otherwise.
+        this.state.correctAnswer = this.state.questions[foo]
+    }
 
     componentWillMount() {
         //document.addEventListener("click")
         this.questionChooser()
-        console.log("New Chosen Questions")
-        console.log(this.state.chosenQuestions)
+        this.correctAnswerPicker();
     }
 
     count = () => {
@@ -39,30 +44,37 @@ class Quiz extends Component {
     }
 
     questionChooser = () => {
-        const stateArray = this.state.questions;
-        console.log("Length " + this.state.questions.length)
+        this.correctAnswerPicker();
+        const stateArray = this.state.questions.slice();
         const holderArray = [];
         //because the dumb thing is splicing the state.questions as well, so I'm having to count down rather than up
-        for(let i = this.state.questions.length; i > 0; i--){
+        for(let i = 0; i < this.state.questions.length; i++ ){
             let foo = Math.floor(Math.random() * stateArray.length)
             holderArray.push(stateArray[foo]);
             stateArray.splice(foo, 1);
+            console.log("State");
+            console.log(this.state.questions);
         }
         this.setState({chosenQuestions:holderArray})
     }
 
-    handleClick = () => {
+    handleClick = (id) => {
         this.setState({displayAnswers: "visible"})
-        console.log(this.state.chosenQuestions)
+        console.log(id);
+        if(id === this.state.correctAnswer.definition){
+            console.log("Correct!");
+        }
     }
 
     render() {
+        let items = this.state.chosenQuestions.map(question => {
+                return(<div key={question.id}><button onClick = {() => {this.handleClick(question.definition)}}>{question.word}</button><span className={this.state.displayAnswers}>{question.definition}</span></div>)
+            })
+        console.log(items);
         return(
             <div>
-                <h3>{this.state.chosenQuestions[0].definition}</h3>
-                <div><button onClick = {this.handleClick} >{this.state.chosenQuestions[0].word}</button><span className={this.state.displayAnswers}>{this.state.chosenQuestions[0].definition}</span></div>
-                <div><button onClick = {this.handleClick} >{this.state.chosenQuestions[1].word}</button><span className={this.state.displayAnswers}>{this.state.chosenQuestions[1].definition}</span></div>
-                <div><button onClick = {this.handleClick} >{this.state.chosenQuestions[2].word}</button><span className={this.state.displayAnswers}>{this.state.chosenQuestions[2].definition}</span></div>
+            <h2>{this.state.correctAnswer.definition}</h2>
+            {items}
             </div>
         )
     }
