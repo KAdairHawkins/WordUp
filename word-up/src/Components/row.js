@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import {
   Col,
-  Jumbotron,
-  Button
+  Button,
+  Container
 } from 'reactstrap';
 import './row.css';
 
 class Row extends Component {
   render() {
     return (
-      <div>
+      <div className="Row">
           <Col>
             <h1>Can you see me now?</h1>
             <p>

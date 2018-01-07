@@ -1,5 +1,4 @@
-* {
+.Row {
   border-style: solid;
-  text-align: left;
-  background-color: blue !important;
+  text-align: center;
 }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   Container,
   Col,
-  Jumbotron,
   Button
 } from 'reactstrap';
 import Row from './row.js';
