@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
 import Wrapper from "./Components/container";
 
 class App extends Component {
