@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ContainerComponent />
+        <ContainerComponent selectedWord={{word:"Inimitable", definition:"See: Aaron Burr"}}/>
       </div>
     );
   }

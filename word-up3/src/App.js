@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
+import Container from "./components/Container"
 
 const App = () =>
   <Router>
@@ -12,6 +13,7 @@ const App = () =>
       <Wrapper>
         <Route exact path="/" component={About} />
         <Route exact path="/about" component={About} />
+        <Route exact path="/search" component={Container} />
       </Wrapper>
       <Footer />
     </div>
