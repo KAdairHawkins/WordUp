@@ -62,11 +62,6 @@ class ContainerComponent extends Component {
             <Row>
         {/* Images for Hangman */}
           <Col>
-            <Card className="staticImg">
-              <CardImg top="top" width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=300&h=275" alt=""/>
-            </Card>
-          </Col>
-          <Col>
             <Card className="dynamicImg">
               <CardImg top="top" width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=300&h=275" alt=""/>
             </Card>
