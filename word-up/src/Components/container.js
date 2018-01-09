@@ -20,16 +20,34 @@ class ContainerComponent extends Component {
       <Container fluid={true}>
         <Row>
           <Col>
-            <h1>Hangman Div</h1>
+            <h1>Hangman</h1>
+{/* Images */}
             <Row>
               <Col>
-                <Card>
-                  <CardImg top="top" width="100%" src="./images/Hangman_game.jpg" alt="Card image cap"/>
+                <Card className="staticImg">
+                  <CardImg top="top" width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=300&h=275" alt=""/>
                 </Card>
               </Col>
               <Col>
-                <Card>
-                  <CardImg top="top" width="100%" src="./Hangman-0.png" alt="Card image cap"/>
+                <Card className="dynamicImg">
+                  <CardImg top="top" width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=300&h=275" alt=""/>
+                </Card>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <div className="correctLetters">Correct Letters<span></span></div>
+              </Col>
+              <Col>
+                <div className="usedLetters">Used Letters<span></span></div>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <Card body className="text-center">
+                  <CardTitle className="word">This is where the word goes.</CardTitle>
+                  <CardText className="wordDefinition">This is where the definition goes.</CardText>
+                  <Button className="Play" tag="a" color="success" size="large" href="http://reactstrap.github.io" target="_blank">Play Again!</Button>
                 </Card>
               </Col>
             </Row>
@@ -45,24 +63,24 @@ class ContainerComponent extends Component {
               <Col></Col>
               <Row>
                 <Col>
-                  <Card>
+                  <Card className="Giphy1">
                     <CardImg top="top" width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=300&h=275" alt="Card image cap"/>
                   </Card>
                 </Col>
                 <Col>
-                  <Card>
+                  <Card className="Giphy2">
                     <CardImg top="top" width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=300&h=275" alt="Card image cap"/>
                   </Card>
                 </Col>
               </Row>
               <Row>
                 <Col>
-                  <Card>
+                  <Card className="Giphy3">
                     <CardImg top="top" width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=300&h=275" alt="Card image cap"/>
                   </Card>
                 </Col>
                 <Col>
-                  <Card>
+                  <Card className ="Giphy4">
                     <CardImg top="top" width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=300&h=275" alt="Card image cap"/>
                   </Card>
                 </Col>
@@ -70,15 +88,7 @@ class ContainerComponent extends Component {
             </Row>
           </Col>
         </Row>
-        <Row>
-          <Col></Col>
-          <Col>
-            <Button tag="a" color="success" size="large" href="http://reactstrap.github.io" target="_blank">
-              Play Again!
-            </Button>
-          </Col>
-          <Col></Col>
-        </Row>
+
       </Container>
     </div>)
   }
