@@ -36,10 +36,18 @@ class ContainerComponent extends Component {
             </Row>
             <Row>
               <Col>
-                <div className="correctLetters">Correct Letters<span></span></div>
+               <Card>
+                 <CardBody className="correctLetters">
+                   <CardTitle><span>Correct Letters</span></CardTitle>
+                 </CardBody>
+               </Card>
               </Col>
               <Col>
-                <div className="usedLetters">Used Letters<span></span></div>
+                <Card>
+                  <CardBody className="usedLetters">
+                    <CardTitle><span>Used Letters</span></CardTitle>
+                  </CardBody>
+                </Card>
               </Col>
             </Row>
             <Row>
