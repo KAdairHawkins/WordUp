@@ -10,6 +10,14 @@ body {
   text-align: center;
 }
 
+#titleHangman {
+    color: #D4EDF7;
+}
+
+#titleGiphy {
+    color: #D4EDF7;
+}
+
 .staticImg {
   margin-bottom: 25px;
 }

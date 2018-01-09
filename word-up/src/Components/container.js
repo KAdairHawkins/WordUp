@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink,
   Container,
   Row,
   Col,
@@ -15,16 +15,45 @@ import './images/Hangman_game.jpg';
 import './images/Hangman-0.png';
 import './container.css';
 
+
 class ContainerComponent extends Component {
+  constructor(props) {
+    super(props);
+
+    this.toggleNavbar = this.toggleNavbar.bind(this);
+    this.state = {
+      collapsed: true
+    };
+  }
+
+  toggleNavbar() {
+    this.setState({
+      collapsed: !this.state.collapsed
+    });
+  }
   render() {
     return (<div>
+      <Navbar color="faded" light>
+        <NavbarBrand href="/" className="mr-auto">reactstrap</NavbarBrand>
+        <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+        <Collapse isOpen={!this.state.collapsed} navbar>
+          <Nav navbar>
+            <NavItem>
+              <NavLink href="/components/">Components</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
       <Container fluid={true}>
         <Row>
 {/* Hangman */}
           <Col>
             <Row>
               <Col className="hangmanTitle">
-                <h1>Hangman</h1>
+                <h1 id="titleHangman">Hangman</h1>
               </Col>
             </Row>
             <Row>
@@ -80,7 +109,7 @@ class ContainerComponent extends Component {
           <Row>
             <Col></Col>
             <Col>
-              <h1>Hints!</h1>
+              <h1 id="titleGiphy">Hints!</h1>
             </Col>
             <Col></Col>
             <Row>
