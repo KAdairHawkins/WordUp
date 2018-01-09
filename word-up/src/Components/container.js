@@ -14,6 +14,7 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink,
 import './images/Hangman_game.jpg';
 import './images/Hangman-0.png';
 import './container.css';
+import './students.jpg';
 
 
 class ContainerComponent extends Component {
@@ -31,13 +32,14 @@ class ContainerComponent extends Component {
       collapsed: !this.state.collapsed
     });
   }
+
   render() {
-    return (<div>
+    return (<div className="body">
       <Navbar color="faded" light>
-        <NavbarBrand href="/" className="mr-auto">reactstrap</NavbarBrand>
+        <NavbarBrand href="/" className="mr-auto">WordUP</NavbarBrand>
         <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
         <Collapse isOpen={!this.state.collapsed} navbar>
-          <Nav navbar>
+          <Nav navbar className="Nav">
             <NavItem>
               <NavLink href="/components/">Components</NavLink>
             </NavItem>
@@ -47,7 +49,8 @@ class ContainerComponent extends Component {
           </Nav>
         </Collapse>
       </Navbar>
-      <Container fluid={true}>
+      <Container fluid={true} className="body">
+        <Container>
         <Row>
 {/* Hangman */}
           <Col>
@@ -141,6 +144,7 @@ class ContainerComponent extends Component {
       </Col>
 
       </Row>
+      </Container>
     </Container>
   </div>)
   }

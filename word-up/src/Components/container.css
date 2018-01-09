@@ -2,8 +2,10 @@
   border-radius: 0 !important;
 }
 
-body {
-  background: linear-gradient(to bottom right, #fc6004 0%, #347b98 105%);;
+.body {
+  background-image: url('./light.jpeg');
+  max-width: 100%;
+  height: auto;
 }
 
 .hangmanTitle {
@@ -11,12 +13,18 @@ body {
 }
 
 #titleHangman {
-    color: #D4EDF7;
+    color:#ffff80;
 }
 
 #titleGiphy {
-    color: #D4EDF7;
+    color:#ffff80;
 }
+
+
+.Nav{
+  float: right;
+}
+
 
 .staticImg {
   margin-bottom: 25px;
