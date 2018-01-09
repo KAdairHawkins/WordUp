@@ -17,35 +17,62 @@ import './container.css';
 
 
 class ContainerComponent extends Component {
+constructor(props) {
+    super(props);
+    this.state = {
+      blankWord: [],
+      collapsed: true,
+      winNumber: 0,
+      lossNumber: 0,
+      guesses: [" "],
+      guessesSoFar: 0,
+      guessedWord: "",
+      chosenWord: this.props.selectedWord.word,
+      chosenDefinition: this.props.selectedWord.definition,
+      hangmanImages: ["https://i.imgur.com/SSZYnHL.png", "https://i.imgur.com/cc1GLcT.png", "https://i.imgur.com/8cZAcXF.png", "https://i.imgur.com/W1Hx7Ow.png", "https://i.imgur.com/7xdTxUJ.png", "https://i.imgur.com/urZJPRc.png", "https://i.imgur.com/Pob9VWl.png"], 
+      data: {},
+      firstGiphyUrl: "",
+      secondGiphyUrl: "",
+      thirdGiphyUrl: "",
+      fourthGiphyUrl: ""
+    }
+    this.setState = this.setState.bind(this);
+  }
   toggleNavbar = this.toggleNavbar.bind(this);
-  state = {
-      collapsed: true
-  };
 
+    
   toggleNavbar() {
     this.setState({
       collapsed: !this.state.collapsed
     });
   }
-  state = {blankWord: [],
-        winNumber: 0,
-        lossNumber: 0,
-        guesses: [" "],
-        guessesSoFar: 0,
-        guessedWord: "",
-        chosenWord: this.props.selectedWord.word,
-        chosenDefinition: this.props.selectedWord.definition,
-        hangmanImages: ["https://i.imgur.com/SSZYnHL.png", "https://i.imgur.com/cc1GLcT.png", "https://i.imgur.com/8cZAcXF.png", "https://i.imgur.com/W1Hx7Ow.png", "https://i.imgur.com/7xdTxUJ.png", "https://i.imgur.com/urZJPRc.png", "https://i.imgur.com/Pob9VWl.png"]
-    }
+  
+    apiCall(selectedWord) {
+      let state = this.state
+      let dataHolder = {}
+      const queryUrl= "https://api.giphy.com/v1/gifs/search?api_key=44bb524d90374ef48090c7de2ce02d06&q=" + this.state.chosenWord
+      fetch(queryUrl)
+      .then(function(response){
+        response.json().then(function(data){
+          state.data = data.data
+          console.log(state.data);
+        })
+      })
 
-    componentDidLoad(){
+    };
+
+    componentDidMount(){
         console.log("Hangman Working")
+        console.log(this.state.data);
+        this.giphyTimer();
     }
 
     componentWillMount(){
         document.addEventListener("keydown", this.handleKeyPress.bind(this));
         this.blankGenerator(this.state.chosenWord);
         console.log(this.state.blankWord)
+
+        this.apiCall()
     }
 
     //Generates a bunch of underscores
@@ -54,6 +81,21 @@ class ContainerComponent extends Component {
             this.state.blankWord.push("_ ");
         }
     }    
+
+    //Don't judge me.
+    giphyTimer = () => {
+      let that=this
+      setTimeout(function(){
+        that.setState({
+          firstGiphyUrl: that.state.data[0].images.fixed_height.url,
+          secondGiphyUrl: that.state.data[1].images.fixed_height.url,
+          thirdGiphyUrl: that.state.data[2].images.fixed_height.url,
+          fourthGiphyUrl: that.state.data[3].images.fixed_height.url
+        })
+        console.log("Firing")
+      }, 150)
+      
+    }
 
     //Updates the blank word if it finds the letter in it
     //Then checks if you've won
@@ -64,7 +106,6 @@ class ContainerComponent extends Component {
                 this.state.blankWord[i]=this.state.chosenWord[i];
                 //update the page HTML with the new partially-underscored word 
                 this.setState({guessedWord: this.state.blankWord.join(" ")});
-                console.log("Foo" + this.state.guessedWord)
                 //check if you got the word
                 if (this.state.blankWord.join("") === this.state.chosenWord) {
                     //Increments the number of wins
@@ -79,11 +120,10 @@ class ContainerComponent extends Component {
 
 
     handleKeyPress = (event) => {
-        console.log("Win Number:" + this.state.winNumber);
-        console.log("Triggering")
         //sanitize input
+
+        console.log(this.state.data[0].images.fixed_height.url);
         const letter = String.fromCharCode(event.keyCode).toLowerCase();
-        console.log(letter)
 
         //runs through the Hangman code
         this.hangman(this.state.chosenWord, letter);
@@ -91,18 +131,14 @@ class ContainerComponent extends Component {
         //Ensures the user won't be counted wrong for guessing a letter that's capitalized in the word
         let blankWordLowerCase = []
         for (let i = 0 ; i < this.state.blankWord.length; i++) {
-            console.log("Undefined" + this.state.blankWord);
-            console.log(this.state.blankWord);
            blankWordLowerCase[i] = this.state.blankWord[i].toLowerCase();
         };
-        console.log(blankWordLowerCase);
         //if (you can't find what key you pressed in the "already guessed" index) AND (the character code of your letter is lower-case-A or later)
         //AND (the character code of your letter is lower-case-Z or earlier AND (the guess isn't part of the displayed word yet))
         if(this.state.guesses.indexOf(letter) === -1 && letter.charCodeAt() > 93 && letter.charCodeAt() < 123 && blankWordLowerCase.indexOf(letter) === -1){
             let newGuess = this.state.guesses;
             newGuess.push(letter);
             this.setState(this.state.guesses: newGuess);
-            console.log(this.state.guesses);
             if (this.state.chosenWord.toLowerCase().indexOf(letter) === -1){    
                 this.state.guessesSoFar+=1
             }
@@ -143,12 +179,12 @@ class ContainerComponent extends Component {
         {/* Images for Hangman */}
           <Col>
             <Card className="staticImg">
-              <CardImg top="top" width="100%" src="https://i.imgur.com/RisnVCi.jpg" alt=""/>
+              <CardImg top={true} width="100%" src="https://i.imgur.com/RisnVCi.jpg" alt=""/>
             </Card>
           </Col>
           <Col>
             <Card className="dynamicImg">
-              <CardImg top="top" width="100%" src={this.state.hangmanImages[this.state.guessesSoFar]} alt=""/>
+              <CardImg top={true} width="100%" src={this.state.hangmanImages[this.state.guessesSoFar]} alt=""/>
             </Card>
           </Col>
           </Row>
@@ -176,7 +212,7 @@ class ContainerComponent extends Component {
 
         <Row>
           <Col>
-            <Card body="body" className="text-center">
+            <Card body={true} className="text-center">
               <CardTitle className="word">{this.state.chosenWord.word}</CardTitle>
               <CardText className="wordDefinition">{this.state.chosenWord.definition}</CardText>
               <Button className="Play" tag="a" color="success" size="large" href="/">Play Again!</Button>
@@ -199,24 +235,24 @@ class ContainerComponent extends Component {
             <Row>
               <Col>
                 <Card className="Giphy1">
-                  <CardImg top="top" width="100%" src="https://media2.giphy.com/media/kTZBUjdRlZB3G/200w.gif" alt="Card image cap"/>
+                  <CardImg top={true} width="100%" src={this.state.firstGiphyUrl} alt="Card image cap"/>
                 </Card>
               </Col>
               <Col>
                 <Card className="Giphy2">
-                  <CardImg top="top" width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=300&h=275" alt="Card image cap"/>
+                  <CardImg top={true} width="100%" src={this.state.secondGiphyUrl} alt="Card image cap"/>
                 </Card>
               </Col>
             </Row>
             <Row>
               <Col>
                 <Card className="Giphy3">
-                  <CardImg top="top" width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=300&h=275" alt="Card image cap"/>
+                  <CardImg top={true} width="100%" src={this.state.thirdGiphyUrl} alt="Card image cap"/>
                 </Card>
               </Col>
               <Col>
                 <Card className="Giphy4">
-                  <CardImg top="top" width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=300&h=275" alt="Card image cap"/>
+                  <CardImg top={true} width="100%" src={this.state.fourthGiphyUrl} alt="Card image cap"/>
                 </Card>
               </Col>
             
