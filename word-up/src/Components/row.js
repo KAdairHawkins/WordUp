@@ -1,32 +1,21 @@
 import React, { Component } from 'react';
 import {
   Col,
+  Row,
   Button,
   Container
 } from 'reactstrap';
 import './row.css';
+import VerticalLine from './col.js';
 
-class Row extends Component {
+class Line extends Component {
   render() {
     return (
-      <div className="Row">
-          <Col>
-            <h1>Can you see me now?</h1>
-            <p>
-              <Button
-                tag="a"
-                color="success"
-                size="large"
-                href="http://reactstrap.github.io"
-                target="_blank"
-              >
-                View Reactstrap Docs
-              </Button>
-            </p>
-          </Col>
+      <div>
+        <Col/>
       </div>
     );
   }
 }
 
-export default Row;
+export default Line;

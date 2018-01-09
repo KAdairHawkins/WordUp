@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import {
   Container,
   Col,
+  Row,
   Button
 } from 'reactstrap';
-import Row from './row.js';
-import './row.css';
+import Line from './row.js';
 
 class Wrapper extends Component {
   render() {
     return (
       <div>
-          <Row/>
+        <Container>
+          <Line/>
+        </Container>
       </div>
     );
   }
