@@ -1,0 +1,43 @@
+* {
+  border-radius: 0 !important;
+}
+
+body {
+  background: linear-gradient(to bottom right, #fc6004 0%, #347b98 105%);;
+}
+
+.hangmanTitle {
+  text-align: center;
+}
+
+.staticImg {
+  margin-bottom: 25px;
+}
+
+.dynamicImg {
+  margin-bottom: 25px;
+}
+
+.correctLetters {
+  margin-bottom: 25px;
+}
+
+.usedLetters {
+  margin-bottom: 25px;
+}
+
+.Giphy1 {
+  margin-bottom: 25px;
+}
+
+.Giphy2 {
+  margin-bottom: 25px;
+}
+
+.Giphy3 {
+  margin-bottom: 25px;
+}
+
+.Giphy4 {
+  margin-bottom: 25px
+}
