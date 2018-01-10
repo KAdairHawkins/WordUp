@@ -3,7 +3,7 @@
 }
 
 .body {
-  background-image: url('./students.jpeg');
+  background-image: url('./woodenBack.jpeg');
   max-width: 100%;
   height: auto;
 }
@@ -22,6 +22,9 @@
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
+.spanTitle {
+  height: 30px;
+}
 
 .Nav{
   float: right;

@@ -191,7 +191,7 @@ constructor(props) {
           <Col>
             <Card className="correctLetters">
               <CardBody>
-                <CardTitle>
+                <CardTitle className="spanTitle">
                   <span>{this.state.blankWord}</span>
                 </CardTitle>
               </CardBody>
@@ -200,7 +200,7 @@ constructor(props) {
           <Col>
             <Card className="usedLetters">
               <CardBody>
-                <CardTitle>
+                <CardTitle className="spanTitle">
                   <span>{this.state.guesses}</span>
                 </CardTitle>
               </CardBody>
