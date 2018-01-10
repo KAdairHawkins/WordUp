@@ -3,7 +3,7 @@
 }
 
 .body {
-  background-image: url('./light.jpeg');
+  background-image: url('./students.jpeg');
   max-width: 100%;
   height: auto;
 }
@@ -42,6 +42,11 @@
   margin-bottom: 25px;
 }
 
+.giphyImg {
+  height: 250px;
+  width: 250px;
+}
+
 .Giphy1 {
   margin-bottom: 25px;
 }
@@ -56,8 +61,4 @@
 
 .Giphy4 {
   margin-bottom: 25px
-}
-
-.letterBox {
-  height: 30px;
 }

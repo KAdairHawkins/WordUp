@@ -232,24 +232,24 @@ constructor(props) {
             <Row>
               <Col>
                 <Card className="Giphy1">
-                  <CardImg top="top" width="100%" src={this.state.firstGiphyUrl} alt="Card image cap"/>
+                  <CardImg top="top" width="100%" src={this.state.firstGiphyUrl} alt="Card image cap" className="giphyImg"/>
                 </Card>
               </Col>
               <Col>
                 <Card className="Giphy2">
-                  <CardImg top="top" width="100%" src={this.state.secondGiphyUrl} alt="Card image cap"/>
+                  <CardImg top="top" width="100%" src={this.state.secondGiphyUrl} alt="Card image cap" className="giphyImg"/>
                 </Card>
               </Col>
             </Row>
             <Row>
               <Col>
                 <Card className="Giphy3">
-                  <CardImg top="top" width="100%" src={this.state.thirdGiphyUrl} alt="Card image cap"/>
+                  <CardImg top="top" width="100%" src={this.state.thirdGiphyUrl} alt="Card image cap" className="giphyImg"/>
                 </Card>
               </Col>
               <Col>
                 <Card className="Giphy4">
-                  <CardImg top="top" width="100%" src={this.state.fourthGiphyUrl} alt="Card image cap"/>
+                  <CardImg top="top" width="100%" src={this.state.fourthGiphyUrl} alt="Card image cap" className="giphyImg"/>
                 </Card>
               </Col>
             </Row>
