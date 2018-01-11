@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WordUp</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Bootstrap -->
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <!-- Style to fix the issue of text extending past panel length -->
+    
+   </head>
+  
+  <body>
+
+
+
+  <div class="wrapper">
+            <!-- Sidebar Holder -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+                    <h3>
+                    <img src="worduplogo1.png" style="
+                        width: 150px;
+                        "></h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>+</p>
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li><a href="profile.html">Profile</a></li>
+                    
+                </ul>
+            </li>
+            <li><a href="about.html"></a><a href="#link-text" style="color: #fff;">About</a> <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" style="color: #fff;">Games</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                      <li><a href="hangman.html">Hangman</a></li>
+                      <li><a href="flashcards.html">Flashcards</a></li>
+                      <li><a href="quizzes.html">Quizzes</a></li>
+                </ul>
+            </li>
+                    
+            <li class="contacttext">
+                <a href="contact.html" style="color: #fff;">Contact</a>
+            </li>
+        </ul>
+		
+               
+      </nav>
+</div>
+            <!-- Page Content Holder -->
+    <div id="content">
+
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <img src="worduptitle.png" style="
+                        width: 85px;
+                        ">
+
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn" style="
+                               background-color: #347B98;">
+                                <i class="glyphicon glyphicon-align-left"></i>
+                                <span>=</span>
+                            </button>
+                        </div>
+
+                  </div>
+                </nav>
+                
+                           
+                
+		
+<!--      Profile-->
+<div class="container" style="width: 580px;">
+<br>
+<br>
+    <div class="row" id="main">
+        <div class="col-md-4 well" id="leftPanel">
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                       <br>
+                        <img src="user.png" alt="Texto Alternativo" class="img-circle img-thumbnail">
+                        <h2>User Name</h2>
+                        <p class="Summary" id="summary">Summary</p>                        
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-warning">
+                                Social</button>
+                            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <span class="caret"></span><span class="sr-only">Social</span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Twitter</a></li>
+                                <li><a href="https://plus.google.com/+Jquery2dotnet/posts">Google +</a></li>
+                                <li><a href="https://www.facebook.com/jquery2dotnet">Facebook</a></li>
+                                <li class="divider"></li>
+                               
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 well" id="rightPanel" style="background: #D2D2D2">
+            <div class="row">
+    <div class="col-md-12">
+        <form role="form">
+            <h2>Edit your profile.<br><small>It's always easy</small></h2>
+            <hr class="colorgraph">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+                    </div>
+                </div>
+            </div>
+            <hr class="colorgraph">
+            <div class="row">
+                <div class="col-xs-12 col-md-6"></div>
+                <div class="col-xs-12 col-md-6"><a href="#" class="btn btn-success btn-block btn-lg">Save</a></div>
+            </div>
+        </form>
+       
+    </div>
+</div>
+</div>
+</div>
+		</div>
+		
+		
+		
+		
+		
+<!--      SAVED ITEMS FOR GIFS-->
+     
+     
+<div class="page main">
+ <div class="overlayGifs"></div>
+
+<div class="headerGifs">
+  <div class="slider"></div>
+  <div class="tab one ripple">saved items</div>
+  <div class="tab two ripple">tags</div>
+  <div class="more"></div>
+</div>
+  <div class="card ripple"></div>
+  <div class="card ripple"></div>
+  <div class="card ripple"></div>
+  <div class="card ripple"></div>
+  <div class="card ripple"></div>
+  <div class="card ripple"></div>
+  <div class="card ripple"></div>
+  <div class="card ripple"></div>
+  <div class="card ripple"></div>
+  <div class="card ripple"></div>
+  <div class="card ripple"></div>
+  <div class="card ripple"></div>
+  <div class="card ripple"></div>
+  <div class="card ripple"></div>
+  <div class="card ghost"></div>
+  <div class="card ghost"></div>
+  <div class="card ghost"></div>
+  <div class="card ghost"></div>
+  <div class="card ghost"></div>
+  <div class="card ghost"></div>
+  <div class="card ghost"></div>
+  <div class="card ghost"></div>
+  <div class="card ghost"></div>
+  <div class="card ghost"></div>
+  <div class="bottom"></div>
+</div>
+<div class="page tags">
+  <h3>Add saved images to a tag</h3>
+  <div class="tag"></div>
+  <p>Tags are where you add and organize your saved images</p>
+</div>
+     
+     
+     
+      <!--      SAVED ITEMS FOR GIFS-->
+
+      
+      
+<!--      footer-->
+
+      
+<!-- jQuery CDN -->
+         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+         <!-- Bootstrap Js CDN -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+         <script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
+                 });
+             });
+			 /* GRID */
+			 // Hide all elements with class="containerTab", except for the one that matches the clickable grid column
+function openTab(tabName) {
+    var i, x;
+    x = document.getElementsByClassName("containerTab");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    document.getElementById(tabName).style.display = "block";
+}
+			 
+//			 flashcards //
+			 function Quiz(questions) {
+    this.score = 0;
+    this.questions = questions;
+    this.currentQuestionIndex = 0;
+}
+
+Quiz.prototype.guess = function(answer) {
+    if(this.getCurrentQuestion().isCorrectAnswer(answer)) {
+        this.score++;
+    }
+    this.currentQuestionIndex++;
+};
+
+Quiz.prototype.getCurrentQuestion = function() {
+    return this.questions[this.currentQuestionIndex];
+};
+
+Quiz.prototype.hasEnded = function() {
+    return this.currentQuestionIndex >= this.questions.length;
+};
+function Question(text, choices, answer) {
+    this.text = text;
+    this.choices = choices;
+    this.answer = answer;
+}
+
+Question.prototype.isCorrectAnswer = function (choice) {
+    return this.answer === choice;
+};
+var QuizUI = {
+    displayNext: function () {
+        if (quiz.hasEnded()) {
+            this.displayScore();
+        } else {
+            this.displayQuestion();
+            this.displayChoices();
+            this.displayProgress();
+        }
+    },
+    displayQuestion: function() {
+        this.populateIdWithHTML("question", quiz.getCurrentQuestion().text);
+    },
+    displayChoices: function() {
+        var choices = quiz.getCurrentQuestion().choices;
+
+        for(var i = 0; i < choices.length; i++) {
+            this.populateIdWithHTML("choice" + i, choices[i]);
+            this.guessHandler("guess" + i, choices[i]);
+        }
+    },
+    displayScore: function() {
+        var gameOverHTML = "<h1>Game Over</h1>";
+        gameOverHTML += "<h2> Your score is: " + quiz.score + "</h2>";
+        this.populateIdWithHTML("quiz", gameOverHTML);
+    },
+    
+    populateIdWithHTML: function(id, text) {
+        var element = document.getElementById(id);
+        element.innerHTML = text;
+    },
+    guessHandler: function(id, guess) {
+        var button = document.getElementById(id);
+        button.onclick = function() {
+            quiz.guess(guess);
+            QuizUI.displayNext();
+        }
+    },
+    
+    displayProgress: function() {
+        var currentQuestionNumber = quiz.currentQuestionIndex + 1;
+        this.populateIdWithHTML("progress", "Question " + currentQuestionNumber + " of " + quiz.questions.length);
+    }
+};
+//Create Questions
+var questions = [
+    new Question("Who was the first President of the United States?", [ "George Washington", "Thomas Jefferson", "Thomas Edison", "I don't know" ], "George Washington"),
+    new Question("What is the answer to the Ultimate Question of Life, the Universe, and Everything?", ["Pi","42", "Wah?", "I don't know"], "42"),
+    new Question("Do you love to code?", ["No","Yes", "Hell Yeah", "No"], "Hell Yeah"),
+    new Question("What's the best programming language?", ["Javascript","C#", "Php", "Python"], "Javascript"),
+    new Question("Is Jason Chan Awesome?", ["Yes","No", "Maybe", "He's okay"], "Yes")
+];
+
+//Create Quiz
+var quiz = new Quiz(questions);
+
+//Display Quiz
+QuizUI.displayNext();
+
+// PROFILE
+
+//WRITE ANYTHING TO DROPDOWN SOCIAL LINK//
+
+
+
+// PROFILE//
+			 
+//			 SAVED ITEMS //
+			 // Menu
+
+$(".more, .overlay").on('click', function() {
+  $(".menu, .overlay").toggleClass("active");
+});
+
+// Tabs & Windows
+
+$(".tab.one").on('click', function() {
+  $(".slider").removeClass("right");
+  $(".tags").removeClass("active");
+  $(".main").removeClass("disabled")
+});
+
+$(".tab.two").on('click', function() {
+  $(".slider").addClass("right");
+  $(".tags").addClass("active");
+  $(".main").addClass("disabled")
+  $(".main").removeClass("current")
+});
+
+// Card Height
+
+$(window).resize(function() {
+  $('.card').each(function() {
+    $(this).height($(this).width() + 56);
+  });
+}).resize();
+
+// Header Shadow
+
+$(".main").scroll(function() {
+  if ($(this).scrollTop() >= 10) {
+    $(".header").addClass("shadow");
+  } else {
+    $(".header").removeClass("shadow");
+  }
+});
+
+// Ripple Effect
+
+$(document).on('click', '.ripple', function(e) {
+  
+  var $ripple = $('<span class="rippling" />'),
+      $button = $(this),
+      btnOffset = $button.offset(),
+      xPos = e.pageX - btnOffset.left,
+      yPos = e.pageY - btnOffset.top,
+      size = 0,
+      animateSize = parseInt(Math.max($button.width(), $button.height()) * Math.PI);
+
+  $ripple.css({
+      top: yPos,
+      left: xPos,
+      width: size,
+      height: size,
+      backgroundColor: $button.attr("ripple-color")
+    })
+    .appendTo($button)
+    .animate({
+      width: animateSize,
+      height: animateSize,
+      opacity: 0
+    }, 500, function() {
+      $(this).remove();
+    });
+});
+
+// Scroll to top when 'Home' key is pressed
+
+$(window).keyup(function (e) {
+  if (e.keyCode == 36) {
+    $('.page').animate({ scrollTop: 0 }, 0);
+  }
+});
+
+
+		</script>
+	  </div>
+</body>
+	  </html>                                                                                 

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WordUp</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Bootstrap -->
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <!-- Style to fix the issue of text extending past panel length -->
+    
+   </head>
+  
+  <body>
+
+
+
+  <div class="wrapper">
+            <!-- Sidebar Holder -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+                    <h3>
+                    <img src="worduplogo1.png" style="
+                        width: 150px;
+                        "></h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>+</p>
+            <li class="active">
+                <a href="index.html" id="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li><a href="#">Home 1</a></li>
+                    <li><a href="#">Home 2</a></li>
+                    <li><a href="#">Home 3</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html"></a><a href="#link-text" style="color: #fff;">About</a> <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" style="color: #fff;">Games</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                      <li><a href="hangman.html">Hangman</a></li>
+                      <li><a href="flashcards.html">Giphy</a></li>
+                      <li><a href="quizzes.html">Quizzes</a></li>
+                </ul>
+            </li>
+                    
+            <li class="contacttext">
+                <a href="contact.html" style="color: #fff;">Contact</a>
+            </li>
+        </ul>
+		
+               
+      </nav>
+</div>
+            <!-- Page Content Holder -->
+    <div id="content">
+
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <img src="worduptitle.png" style="
+                        width: 85px;
+                        ">
+
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn" style="
+                               background-color: #347B98;">
+                                <i class="glyphicon glyphicon-align-left"></i>
+                                <span>=</span>
+                            </button>
+                        </div>
+
+                  </div>
+                </nav>
+                
+                           
+                
+		<article class="flex-container">
+      <section class="flex" id="finn">
+        <div>
+          <figure>
+            <img src="book.png" style="width: 118px;" alt="Finn the human" />
+            <figcaption>Flashcards</figcaption>
+          </figure>
+          <p>Want to level up? Here's how. Get the words right and prove how much you know.</p>
+          <a href="http://adventuretime.wikia.com/wiki/Finn" style="color: #341809;">Click On Game</a>
+        </div>
+      </section>
+<!--
+      <section class="flex" id="jake">
+        <div>
+          <figure>
+-->
+            <!-- The grid: three columns -->
+<!--
+<div class="row">
+  <div class="column" onclick="openTab('b1');" style="background:#999;">GIF</div>
+  <div class="column" onclick="openTab('b2');" style="background:#000000;">GIF</div>
+  <div class="column" onclick="openTab('b3');" style="background:#999;">GIF</div>
+</div>
+-->
+
+<!-- The expanding grid (hidden by default) -->
+<!--
+<div id="b1" class="containerTab" style="display:none;background:green">
+   If you want the ability to close the container, add a close button 
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+  <h2>Box 1</h2>
+  <p>Lorem ipsum..</p>
+</div>
+-->
+
+<!--
+<div id="b2" class="containerTab" style="display:none;background:#000000">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+  <h2>Box 2</h2>
+  <p>Lorem ipsum..</p>
+</div>
+
+<div id="b3" class="containerTab" style="display:none;background:red">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+  <h2>Box 3</h2>
+  <p>Lorem ipsum..</p>
+</div>
+-->
+<!--          </figure>-->
+         
+<!--
+        </div>
+      </section>
+-->
+      
+    </article>
+<!--      FOOTER-->
+      
+      
+<!--      footer-->
+
+      
+<!-- jQuery CDN -->
+         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+         <!-- Bootstrap Js CDN -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+         <script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
+                 });
+             });
+			 /* GRID */
+			 // Hide all elements with class="containerTab", except for the one that matches the clickable grid column
+function openTab(tabName) {
+    var i, x;
+    x = document.getElementsByClassName("containerTab");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    document.getElementById(tabName).style.display = "block";
+}
+		</script>
+	  </div>
+</body>
+	  </html>                                                                                 

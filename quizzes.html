@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WordUp</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Bootstrap -->
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <!-- Style to fix the issue of text extending past panel length -->
+    
+   </head>
+  
+  <body>
+
+
+
+  <div class="wrapper">
+            <!-- Sidebar Holder -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+                    <h3>
+                    <img src="worduplogo1.png" style="
+                        width: 150px;
+                        "></h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>+</p>
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li><a href="profile.html">Profile</a></li>
+                    
+                </ul>
+            </li>
+            <li><a href="about.html"></a><a href="#link-text" style="color: #fff;">About</a> <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" style="color: #fff;">Games</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                      <li><a href="hangman.html">Hangman</a></li>
+                      <li><a href="flashcards.html">Flashcards</a></li>
+                      <li><a href="quizzes.html">Quizzes</a></li>
+                </ul>
+            </li>
+                    
+            <li class="contacttext">
+                <a href="contact.html" style="color: #fff;">Contact</a>
+            </li>
+        </ul>
+        
+               
+      </nav>
+</div>
+            <!-- Page Content Holder -->
+    <div id="content">
+
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <img src="worduptitle.png" style="
+                        width: 85px;
+                        ">
+
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn" style="
+                               background-color: #347B98;">
+                                <i class="glyphicon glyphicon-align-left"></i>
+                                <span>=</span>
+                            </button>
+                        </div>
+
+                  </div>
+                </nav>
+                
+                           
+                
+		<article class="flex-container">
+      <section class="flex" id="finn">
+        <div>
+          <div class="grid">
+    <div id="quiz" class="centered grid__col--8">
+        <h1>History Quiz</h1>
+
+        <h2 id="question" class="headline-secondary--grouped"></h2>
+        <h3 id="score"></h3>
+
+        <p id="choice0"></p>
+        <button id="guess0" class="btn--default">Select</button>
+
+        <p id="choice1"></p>
+        <button id="guess1" class="btn--default">Select</button>
+        <p id="choice2"></p>
+        <button id="guess2" class="btn--default">Select</button>
+        <p id="choice3"></p>
+        <button id="guess3" class="btn--default">Select</button>
+        <footer>
+            <p id="progress">Question x of y</p>
+            <p>You've got this</p>
+
+        </footer>
+    </div>
+</div>
+        </div>
+      </section>
+</article>
+<!--      FOOTER-->
+      
+      
+<!--      footer-->
+
+      
+<!-- jQuery CDN -->
+         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+         <!-- Bootstrap Js CDN -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+         <script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
+                 });
+             });
+			 /* GRID */
+			 // Hide all elements with class="containerTab", except for the one that matches the clickable grid column
+function openTab(tabName) {
+    var i, x;
+    x = document.getElementsByClassName("containerTab");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    document.getElementById(tabName).style.display = "block";
+}
+			 
+//			 flashcards //
+			 function Quiz(questions) {
+    this.score = 0;
+    this.questions = questions;
+    this.currentQuestionIndex = 0;
+}
+
+Quiz.prototype.guess = function(answer) {
+    if(this.getCurrentQuestion().isCorrectAnswer(answer)) {
+        this.score++;
+    }
+    this.currentQuestionIndex++;
+};
+
+Quiz.prototype.getCurrentQuestion = function() {
+    return this.questions[this.currentQuestionIndex];
+};
+
+Quiz.prototype.hasEnded = function() {
+    return this.currentQuestionIndex >= this.questions.length;
+};
+function Question(text, choices, answer) {
+    this.text = text;
+    this.choices = choices;
+    this.answer = answer;
+}
+
+Question.prototype.isCorrectAnswer = function (choice) {
+    return this.answer === choice;
+};
+var QuizUI = {
+    displayNext: function () {
+        if (quiz.hasEnded()) {
+            this.displayScore();
+        } else {
+            this.displayQuestion();
+            this.displayChoices();
+            this.displayProgress();
+        }
+    },
+    displayQuestion: function() {
+        this.populateIdWithHTML("question", quiz.getCurrentQuestion().text);
+    },
+    displayChoices: function() {
+        var choices = quiz.getCurrentQuestion().choices;
+
+        for(var i = 0; i < choices.length; i++) {
+            this.populateIdWithHTML("choice" + i, choices[i]);
+            this.guessHandler("guess" + i, choices[i]);
+        }
+    },
+    displayScore: function() {
+        var gameOverHTML = "<h1>Game Over</h1>";
+        gameOverHTML += "<h2> Your score is: " + quiz.score + "</h2>";
+        this.populateIdWithHTML("quiz", gameOverHTML);
+    },
+    
+    populateIdWithHTML: function(id, text) {
+        var element = document.getElementById(id);
+        element.innerHTML = text;
+    },
+    guessHandler: function(id, guess) {
+        var button = document.getElementById(id);
+        button.onclick = function() {
+            quiz.guess(guess);
+            QuizUI.displayNext();
+        }
+    },
+    
+    displayProgress: function() {
+        var currentQuestionNumber = quiz.currentQuestionIndex + 1;
+        this.populateIdWithHTML("progress", "Question " + currentQuestionNumber + " of " + quiz.questions.length);
+    }
+};
+//Create Questions
+var questions = [
+    new Question("Who was the first President of the United States?", [ "George Washington", "Thomas Jefferson", "Thomas Edison", "I don't know" ], "George Washington"),
+    new Question("What is the answer to the Ultimate Question of Life, the Universe, and Everything?", ["Pi","42", "Wah?", "I don't know"], "42"),
+    new Question("Do you love to code?", ["No","Yes", "Hell Yeah", "No"], "Hell Yeah"),
+    new Question("What's the best programming language?", ["Javascript","C#", "Php", "Python"], "Javascript"),
+    new Question("Is Jason Chan Awesome?", ["Yes","No", "Maybe", "He's okay"], "Yes")
+];
+
+//Create Quiz
+var quiz = new Quiz(questions);
+
+//Display Quiz
+QuizUI.displayNext();
+		</script>
+	  </div>
+</body>
+	  </html>                                                                                 
