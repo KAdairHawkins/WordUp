@@ -6,6 +6,7 @@ console.log("\n***********************************\n" +
             "Grabbing every thread name and link\n" +
             "from reddit's webdev board:" +
             "\n***********************************\n");
+console.log("this is a comment to test git permissions");			
 
 
 // Making a request for reddit's "webdev" board. The page's HTML is passed as the callback's third argument
