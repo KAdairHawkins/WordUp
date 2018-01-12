@@ -462,7 +462,7 @@ fieldset {
     width: 54px;
 }
 .aboutus-text {
-    color: #f4b841;
+    color: #B84814;
     font-size: 14px;
 	font-weight: 500;
     line-height: 22px;
@@ -476,9 +476,9 @@ a:hover, a:active {
     outline: 0;
 }
 .aboutus-more {
-    border: 1px solid #fdb801;
+    border: 1px solid #B84184;
     border-radius: 25px;
-    color: #fdb801;
+    color: #B84184;
     display: inline-block;
     font-size: 14px;
     font-weight: 700;
@@ -526,13 +526,13 @@ a:hover, a:active {
     margin: 0 0 5px;
 }
 .feature .feature-box .feature-content p {
-    color: #f4b841;
+    color: #B84814;
     font-size: 13px;
 	font-weight: 400;
     line-height: 22px;
 }
 .icon {
-    color : #f4b841;
+    color : #B84814;
     padding:0px;
     font-size:40px;
     border: 1px solid #fdb801;
@@ -577,10 +577,12 @@ body {
   padding: 20px;
 }    
 
+/*
 figure, img {
     border-radius: 50%;
     border: 5px solid rgba(0,0,0,.2);
   }
+*/
   figcaption {
     font-size: 20px;
     line-height: 30px;
