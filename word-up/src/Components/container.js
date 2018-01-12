@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink,
-  Container,
+ UncontrolledDropdown,
+ Dropdown,
+ DropdownToggle,
+ DropdownMenu,
+ DropdownItem,
+ Container,
   Row,
   Col,
   Card,
@@ -16,6 +21,11 @@ import './images/Hangman-0.png';
 import './container.css';
 import './students.jpg';
 
+var sectionStyle = {
+  width: "100%",
+  height: "400px",
+  backgroundImage: "url(../images/WordUpLangingPage.jpg)"
+};
 
 class ContainerComponent extends Component {
 constructor(props) {
@@ -38,14 +48,6 @@ constructor(props) {
       fourthGiphyUrl: ""
     }
     this.setState = this.setState.bind(this);
-  }
-  toggleNavbar = this.toggleNavbar.bind(this);
-
-
-  toggleNavbar() {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
   }
 
     apiCall(selectedWord) {
@@ -153,25 +155,44 @@ constructor(props) {
       }
 
   render() {
-    return (<div className="body">
-      <Navbar color="faded" light>
-        <NavbarBrand href="/" className="mr-auto">WordUP</NavbarBrand>
-        <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-        <Collapse isOpen={!this.state.collapsed} navbar>
-          <Nav navbar className="Nav">
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Navbar>
+    return (<div className="body" style={ sectionStyle }>
       <Container fluid={true} className="body">
-        <Container>
         <Row>
-{/* Hangman */}
+        <Col className="Navplace">
+        <Nav vertical>
+        <NavItem>
+          <NavLink href="#" active>Link</NavLink>
+        </NavItem>
+        <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+          <DropdownToggle nav caret>
+            Dropdown
+          </DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem header>Header</DropdownItem>
+            <DropdownItem disabled>Action</DropdownItem>
+            <DropdownItem>Another Action</DropdownItem>
+            <DropdownItem divider />
+            <DropdownItem>Another Action</DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+        <NavItem>
+          <NavLink href="#">Link</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="#">Another Link</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink disabled href="#">Disabled Link</NavLink>
+        </NavItem>
+      </Nav>
+    </Col>
+    <Col>
+
+
+        <Container>
+
+          <Row>
+     {/* Hangman */}
           <Col>
             <Row>
               <Col className="hangmanTitle">
@@ -213,7 +234,7 @@ constructor(props) {
             <Card body="body" className="text-center">
               <CardTitle className="word">{this.state.chosenWord.word}</CardTitle>
               <CardText className="wordDefinition">{this.state.chosenWord.definition}</CardText>
-              <Button className="Play" tag="a" color="success" size="large" href="http://reactstrap.github.io" target="_blank">Play Again!</Button>
+              <Button className="Play" tag="a" color="success" size="large" href="/" target="_blank">Play Again!</Button>
             </Card>
           </Col>
         </Row>
@@ -257,6 +278,8 @@ constructor(props) {
 
       </Row>
       </Container>
+    </Col>
+  </Row>
     </Container>
   </div>)
   }

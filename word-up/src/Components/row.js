@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
+import Sidebar from 'react-side-bar';
 
-class ContainerComponent extends Component {
-  
+const sidebarProps = {
+    bar: (<div>Amazing Sidebar</div>),
+    size: 200
+};
 
 
-
-export default image;
+export default sidebarProps;

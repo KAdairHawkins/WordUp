@@ -1,11 +1,15 @@
-* {
-  border-radius: 0 !important;
+.Navplace {
+  background: orange;
 }
 
 .body {
-  background-image: url('./woodenBack.jpeg');
-  max-width: 100%;
-  height: auto;
+  background-image: url('./WordUpLandingPage.jpg');
+  background-position: center;
+    background-repeat: no-repeat center center;
+    background-size: cover;
+    min-height: 100%;
+    padding-top: 0px;
+
 }
 
 .hangmanTitle {
@@ -37,14 +41,24 @@
 
 .dynamicImg {
   margin-bottom: 25px;
+  height: 250px;
+  width: 250px;
+  background-color: rgba(245, 245, 245, 1);
+  opacity: .8;
 }
 
 .correctLetters {
   margin-bottom: 25px;
+  background-color: rgba(245, 245, 245, 1);
+  opacity: .6;
+  text-align: center;
 }
 
 .usedLetters {
   margin-bottom: 25px;
+  background-color: rgba(245, 245, 245, 1);
+  opacity: .6;
+  text-align: center;
 }
 
 .giphyImg {
