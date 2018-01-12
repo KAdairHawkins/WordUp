@@ -219,8 +219,6 @@ constructor(props) {
         </Row>
       </Col>
 
-
-
       <Col>
           {/* Giphy */}
           <Row>
